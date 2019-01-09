@@ -66,4 +66,4 @@ Each mode except `bash` has it's own config file where you can change script par
 
 # Send your thanks (or condemnations) to
 
-[Elena Voita](https://research.yandex.com/lib/people/610744), [Rico Senrich](https://github.com/rsennrich), [Fedor Ratnikov](https://github.com/justheuristic), and of course the [Moses](www.statmt.org/moses) developers.
+[Elena Voita](https://research.yandex.com/lib/people/610744), [Rico Senrich](https://github.com/rsennrich), [Fedor Ratnikov](https://github.com/justheuristic), [Standa Kuřík](https://github.com/skurik) and of course the [Moses](www.statmt.org/moses) developers.
