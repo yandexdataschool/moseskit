@@ -22,27 +22,27 @@ The script you've just launched trains phrase-based machine translation componen
 Moseskit supports a few modes:
 
 * __`./run_moses.sh`__ - trains MT model components on parallel data, then translates new lines:
- * Config file with parameters: `./src/train_and_translate.sh`
- * Input parallel data: `./data/train.raw.{source_language}` and `./data/train.raw.{target_language}`
- * Saves model files to `./model`. The final package includes lanuage model, 
- * Translates `dev.raw.{source_language}` into `dev.translated.*`
- * Data doesn't need to be tokenized before being fed into moses
+  * Config file with parameters: `./src/train_and_translate.sh`
+  * Input parallel data: `./data/train.raw.{source_language}` and `./data/train.raw.{target_language}`
+  * Saves model files to `./model`. The final package includes lanuage model, 
+  * Translates `dev.raw.{source_language}` into `dev.translated.*`
+  * Data doesn't need to be tokenized before being fed into moses
 
 * __`./run_moses.sh train`__ - trains MT model components. Same as `train_and_translate` but doesn't translate
- * Config file with parameters: `./src/train.sh`
- * Essentially the same as `train_and_translate` but without translating dev
- * Follows [this guide](http://www.statmt.org/moses/?n=FactoredTraining.HomePage) with some advice from the saints of phrase-based MT
+  * Config file with parameters: `./src/train.sh`
+  * Essentially the same as `train_and_translate` but without translating dev
+  * Follows [this guide](http://www.statmt.org/moses/?n=FactoredTraining.HomePage) with some advice from the saints of phrase-based MT
 
 * __`./run_moses.sh translate`__ - translates several input files using a trained model.
- * Config file with parameters: `./src/translate.sh`
- * Translates all files under `./to_translate/*.{source_language}` into `./to_translate/*.{target_language}`
- * One can use `translate` mode only after running `train` or `train_and_translate` or otherwise obtaining pre-trained model files under `./model`.
- * Data doesn't need to be tokenized before being fed into moses
+  * Config file with parameters: `./src/translate.sh`
+  * Translates all files under `./to_translate/*.{source_language}` into `./to_translate/*.{target_language}`
+  * One can use `translate` mode only after running `train` or `train_and_translate` or otherwise obtaining pre-trained model files under `./model`.
+  * Data doesn't need to be tokenized before being fed into moses
 
 * __`./run_moses bash`__ - runs an iterative bash shell in single-run container
- * moseskit directory contents are available under `/home/moses/shared`. E.g. `/home/moses/shared/data`.
- * One can run other commands interactively, e.g. `/home/moses/shared/src/train_and_translate.sh`
- * Your container will be removed once you exit it. To counteract, remove `--rm` flag from [this line](https://github.com/yandexdataschool/moseskit/blob/master/run_moses.sh#L16).
+  * moseskit directory contents are available under `/home/moses/shared`. E.g. `/home/moses/shared/data`.
+  * One can run other commands interactively, e.g. `/home/moses/shared/src/train_and_translate.sh`
+  * Your container will be removed once you exit it. To counteract, remove `--rm` flag from [this line](https://github.com/yandexdataschool/moseskit/blob/master/run_moses.sh#L16).
 
  
 # Config
@@ -59,9 +59,9 @@ Each mode except `bash` has it's own config file where you can change script par
 * All meaningful parameters are commented with `# ^--`-style comments. All undocumented parameters are to be treated carefully and with [this guide](http://www.statmt.org/moses/?n=FactoredTraining.HomePage) in mind.
 * If you have a lot of data in target language but only a few parallel lines, you can train language model on larger non-parallel corpora (e.g. manually using `./run_moses.sh bash`) and manually `./model/lm.binary` with your model.
 * Phrase-Based vs Neural machine translation: 
-  * Use phrase-based if you have <=100k lines of parallel data, neural machine translation for much larger corpora.
-  * Use phrase-based machine translation if you want to prioritize adequacy (every word is translated) and neural machine translation if you want higher fluency (more natural-sounding translations)
-  * One can also combine neural and phrase-based machine translation in numerous ways: ensembling, stacking, etc.
+   * Use phrase-based if you have <=100k lines of parallel data, neural machine translation for much larger corpora.
+   * Use phrase-based machine translation if you want to prioritize adequacy (every word is translated) and neural machine translation if you want higher fluency (more natural-sounding translations)
+   * One can also combine neural and phrase-based machine translation in numerous ways: ensembling, stacking, etc.
 
 
 # Send your thanks (or condemnations) to
