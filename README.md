@@ -1,4 +1,6 @@
 # Moseskit
+_We went through the hell of tuning Moses so that you don't have to__
+
 Pet project: train [Moses](www.statmt.org/moses/) phrase-based machine translation without the pain of configuring it. Docker-powered.
 
 # Installation
@@ -9,7 +11,11 @@ wget https://github.com/yandexdataschool/moseskit/archive/master.zip -O moseskit
 ```
 2. Install [Docker](https://docs.docker.com/install/) and make sure your user can run containers.
 
-That's all! You can test your installation with `./run_moses.sh`. Add `sudo` if your docker is only available under root. The script you've just launched trains phrase-based machine translation components and translates a small chunk of data. It may take half an hour to run. It's a perfect time to get a drink.
+__That's all!__
+
+Test your installation with `./run_moses.sh` or `sudo ./run_moses.sh` if your docker is only available under root.
+
+The script you've just launched trains phrase-based machine translation components and translates a small chunk of data. It may take half an hour to run. It's a perfect time to get a drink.
 
 # Usage
 
@@ -56,3 +62,8 @@ Each mode except `bash` has it's own config file where you can change script par
   * Use phrase-based if you have <=100k lines of parallel data, neural machine translation for much larger corpora.
   * Use phrase-based machine translation if you want to prioritize adequacy (every word is translated) and neural machine translation if you want higher fluency (more natural-sounding translations)
   * One can also combine neural and phrase-based machine translation in numerous ways: ensembling, stacking, etc.
+
+
+# Send your thanks (or condemnations) to
+
+[Elena Voita](https://research.yandex.com/lib/people/610744), [Rico Senrich](https://github.com/rsennrich), [Fedor Ratnikov](https://github.com/justheuristic), and of course the [Moses](www.statmt.org/moses) developers.
