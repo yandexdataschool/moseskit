@@ -1,13 +1,15 @@
 #!/bin/bash
 
 # default argv
-MODE="${1:-train}"
+MODE="${1:-train_and_translate}"
 DATA_PATH="${2:-`pwd`}"
 
 container=justheuristic/vsyo_ty_moses:latest 
 
-if [ "$MODE" == "train" ]; then
+if [ "$MODE" == "train_and_translate" ]; then
     docker run -it -v `realpath $DATA_PATH`:/home/moses/shared $container /home/moses/shared/src/train_and_translate.sh
+elif [ "$MODE" == "train" ]; then
+    docker run -it -v `realpath $DATA_PATH`:/home/moses/shared $container /home/moses/shared/src/train.sh
 elif [ "$MODE" == "translate" ]; then
     docker run -it -v `realpath $DATA_PATH`:/home/moses/shared $container /home/moses/shared/src/translate.sh 
 elif [ "$MODE" == "bash" ]; then
