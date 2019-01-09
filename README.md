@@ -13,7 +13,7 @@ wget https://github.com/yandexdataschool/moseskit/archive/master.zip -O moseskit
 
 __That's all!__
 
-Test your installation with `./run_moses.sh` or `sudo ./run_moses.sh` if your docker is only available under root.
+Test your installation with `cd moseskit` and `./run_moses.sh`. Use `sudo ./run_moses.sh` if your docker is only available for root user.
 
 The script you've just launched trains phrase-based machine translation components and translates a small chunk of data. It may take half an hour to run. It's a perfect time to get a drink.
 
