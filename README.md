@@ -1,5 +1,5 @@
 # Moseskit
-_We went through the hell of tuning Moses so that you don't have to__
+_We went through the hell of tuning Moses so that you don't have to_
 
 Pet project: train [Moses](www.statmt.org/moses/) phrase-based machine translation without the pain of configuring it. Docker-powered.
 
